@@ -1,7 +1,8 @@
 
 export interface NoteModel {
-    title: string;
-    badges: string[];
-    date: Date; // La date est un objet Date
-  }
-  
+  id: number;
+  title: string;
+  badges: string[];
+  date: Date;
+  content: string;
+}
