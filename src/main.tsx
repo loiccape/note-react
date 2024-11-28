@@ -6,7 +6,7 @@ import {
   Navigate
 } from "react-router-dom";
 
-
+import './index.css'
 import LoginPage from "./pages/LoginPage";
 
 const router = createBrowserRouter([
