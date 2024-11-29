@@ -43,7 +43,29 @@ export const NotesContext = createContext<NoteModel[]>([
         badges: ["React", "Redux", "State Management"],
         date: new Date(2024, 10, 4),
         content:"React Performance Optimization"
-      }
+      },
+      {
+        id:7,
+        title: "React Redux",
+        badges: ["React", "Redux", "State Management"],
+        date: new Date(2024, 10, 4),
+        content:"React Performance Optimization"
+      },
+      {
+        id:8,
+        title: "React Redux",
+        badges: ["React", "Redux", "State Management"],
+        date: new Date(2024, 10, 4),
+        content:"React Performance Optimization"
+      },
+      {
+        id:9,
+        title: "React Redux",
+        badges: ["React", "Redux", "State Management"],
+        date: new Date(2024, 10, 4),
+        content:"React Performance Optimization"
+      },
+      
 ])
 
 

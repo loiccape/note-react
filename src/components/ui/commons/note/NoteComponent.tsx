@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { NoteModel } from "@/models/NoteModel";
 import { useNote } from "@/hooks/NoteContext"; // Importer le hook personnalisé
 import { useNavigate } from "react-router-dom";
-
+import { useMediaQuery } from "@/hooks/useMediaQuerY"; // Importer le hook personnalisé
 type NoteComponentProps = {
   note: NoteModel;
 };
@@ -10,6 +10,7 @@ type NoteComponentProps = {
 export default function NoteComponent({ note }: NoteComponentProps) {
   const { setSelectedNote } = useNote(); 
   const navigate = useNavigate()
+  const isLargeScreen = useMediaQuery("(min-width: 1024px)")
 
   const formattedDate = note.date.toLocaleDateString("en-US", {
     day: "2-digit",
@@ -18,8 +19,13 @@ export default function NoteComponent({ note }: NoteComponentProps) {
   });
 
   const handleClick = () => {
-    setSelectedNote(note); 
-    navigate(`/note`);  
+    if(isLargeScreen) {
+
+      setSelectedNote(note); 
+    }else{
+      setSelectedNote(note); 
+      navigate(`/note`);  
+    } 
   };
 
   return (
