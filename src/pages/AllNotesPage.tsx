@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 //hooks imports
 import { useNotes } from "@/hooks/NotesContext";
 import { useMediaQuery } from "@/hooks/useMediaQuerY";
@@ -17,6 +17,9 @@ import { Button } from "@/components/ui/button";
 import {Folder, Trash } from "lucide-react";
 
 export default function AllNotesPage() {
+  //navigation
+  const navigate = useNavigate();
+
   // Gestion des notes
   const { notes } = useNotes();
 
@@ -26,14 +29,18 @@ export default function AllNotesPage() {
   // Vérification de la taille de l'écran
   const isLargeScreen = useMediaQuery("(min-width: 1024px)");
 
+  const handleNewNoteButton = () => {
+    navigate("/new-note");
+  }
+
   return (
     <main className="max-w-screen overflow-hidden">
       <Header />
       <div className="flex flex-col lg:flex-row px-6 lg:px-12 w-full">
         <section className="lg:w-1/5">
           <h1 className="text-2xl mt-6 font-bold lg:hidden">All Notes</h1>
-          <Button className="w-full h-12 mt-4 hidden lg:block">+ Create New Note</Button>
-          <div className="fixed bottom-4 right-10 rounded-full bg-blue-600 w-10 h-10  items-center flex text-white justify-center font-bold z-10"><span>+</span></div>
+          <Button className="w-full h-12 mt-4 hidden lg:block" onClick={handleNewNoteButton}>+ Create New Note</Button>
+          <button onClick={handleNewNoteButton} className="fixed bottom-4 right-10 rounded-full bg-blue-600 w-10 h-10  items-center flex text-white justify-center font-bold z-10"><span>+</span></button>
           <ScrollArea className="mt-4 h-screen">
             <ul>
               {notes.map((note) => (

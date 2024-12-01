@@ -12,6 +12,7 @@ import AllNotesPage from "./pages/AllNotesPage";
 import { NoteProvider } from "./hooks/NoteContext";
 import NoteDetailPage from "./pages/NoteDetailPage";
 import { NotesProvider } from "./hooks/NotesContext";
+import NewNotePage from "./pages/NewNotePage";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path:"/note",
     element: <NoteDetailPage/>
+  },
+  {
+    path:"/new-note",
+    element: <NewNotePage/>
   }
 ]);
 

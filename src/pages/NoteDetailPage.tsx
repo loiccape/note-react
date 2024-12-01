@@ -42,14 +42,14 @@ export default function NoteDetailPage() {
       {/* Contenu de la note */}
       <h1 className="text-2xl font-bold mt-4">{selectedNote.title}</h1>
       <div className="mt-6 flex text-lg">
-        <div className="flex w-1/3 lg:w-1/6">
+        <div className="flex w-1/3 lg:w-1/6 items-center">
           <Tag className="w-4 mr-2 md:w-8 my-auto" />
           <p>Tags</p>
         </div>
         <p>{selectedNote.badges?.join(", ")}</p>
       </div>
       <div className="mt-3 flex border-b-2 pb-8 text-lg">
-        <div className="flex w-1/3 lg:w-1/6">
+        <div className="flex w-1/3 lg:w-1/6 items-center">
           <Clock className="w-4 mr-2 md:w-8 my-auto" />
           <p>Last edited</p>
         </div>
