@@ -11,6 +11,7 @@ import LoginPage from "./pages/LoginPage";
 import AllNotesPage from "./pages/AllNotesPage";
 import { NoteProvider } from "./hooks/NoteContext";
 import NoteDetailPage from "./pages/NoteDetailPage";
+import { NotesProvider } from "./hooks/NotesContext";
 
 const router = createBrowserRouter([
   {
@@ -32,9 +33,11 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")!).render(
+  <NotesProvider>
   <NoteProvider>
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
   </NoteProvider>
+  </NotesProvider>
 );
