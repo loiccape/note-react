@@ -12,7 +12,7 @@ export default function Header() {
             <Search className="w-4" />
             <Input
               placeholder="Search by title, content, or tags…"
-              className="border-none focus:ring-0 p-0 ml-2"
+              className="border-none border-0 focus:ring-0 p-2 ml-2"
             />
           </div>
       

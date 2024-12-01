@@ -44,7 +44,7 @@ export default function NoteComponent({ note, isSelected, onSelect }: NoteCompon
 
   return (
     <li 
-      className={`border-b border-gray-200 pb-4 mt-2 cursor-pointer ${isSelected ? "bg-gray-200" : ""}`} 
+      className={`border-b border-gray-200 pb-4 mt-2 cursor-pointer ${isSelected ? "lg:bg-gray-200" : ""}`} 
       onClick={handleClick}
     >
       <p className="text-4lg md:text-2xl lg:text-1xl font-bold">{note.title}</p>
